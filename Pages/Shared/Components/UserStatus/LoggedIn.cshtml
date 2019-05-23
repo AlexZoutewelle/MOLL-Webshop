@@ -1,0 +1,30 @@
+﻿@model TestWebApp.Models.UserStatusModel
+
+<style>
+.pLogin {
+    position: relative;
+    top: -13px;
+}
+</style>
+<table>
+
+    <tbody>
+        <tr>
+            <td id="navtd3">
+                <ul style="position: relative;bottom: 10px;">
+                    <li>
+                        <a asp-action="LogOut" asp-controller="Page"><font color="#f39c12"><b>Log out</b></font></a>
+                    </li>
+                    <li>
+                        <p  class="pLogin" style="color: white;">Welcome <i>@Model.Username</i></p>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@if (Model.adminPriv == "Y")
+{
+    <a asp-action="DashBoard" asp-controller="Admin"><font color="#f39c12"><b>Admin Page</b></font></a>
+}
+

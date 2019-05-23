@@ -1,0 +1,27 @@
+﻿
+<table>
+    <tbody>
+        <tr>
+            <td id="navtd1">
+                <ul>
+                    <li>
+                        <a asp-action="Login" asp-controller="Page">Log in</a>
+                    </li>
+                </ul>
+            </td>
+            <td id="navtd2">
+                <ul>
+                    <li>
+                        @Html.ActionLink("Register", "Register", "Page", new { user = new TestWebApp.Models.tbl_userdata() })
+
+                    </li>
+                </ul>
+            </td>
+            <td id="navtd3">
+
+                <img id="signuphover" src="~/images/btn_SignUp-normal.png" />
+
+            </td>
+        </tr>
+    </tbody>
+</table>

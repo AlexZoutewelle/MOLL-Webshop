@@ -1,0 +1,116 @@
+﻿@model TestWebApp.Models.OLSSearchModel
+@using TestWebApp.Models;
+@using Microsoft.AspNetCore.Mvc.ModelBinding;
+@using Microsoft.AspNetCore.Routing;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<body>
+    <div class="searchform">
+        <form>
+            <table>
+                <tr>
+                    <th class="titleoflabel">Area:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="fld_Area" id="Area">
+                            <option style="display:none" disabled selected></option>
+                            <option value="Drenthe">Drenthe</option>
+                            <option value="Flevoland">Flevoland</option>
+                            <option value="Friesland">Friesland</option>
+                            <option value="Gelderland">Gelderland</option>
+                            <option value="Groningen">Groningen</option>
+                            <option value="Limburg">Limburg</option>
+                            <option value="Noord-Brabant">Noord-Brabant</option>
+                            <option value="Noord-Holland">Noord-Holland</option>
+                            <option value="Overijssel">Overijssel</option>
+                            <option value="Utrecht">Utrecht</option>
+                            <option value="Zeeland">Zeeland</option>
+                            <option value="Zuid-Holland">Zuid-Holland</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Gender:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="fld_gender" id="Gender">
+                            <option style="display:none" disabled selected></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Lowest cost:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="lowerCost" min="1" max="1000" id="LowerCost" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Highest cost:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="higherCost" min="1" max="1000" id="HigherCost" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Available from:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="time" name="timeAvailableBegin" id="TimeAvailableBegin" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Available until:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="time" name="timeAvailableEnd" id="TimeAvailableEnd" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Name of Service:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="fld_name" id="ServiceName" size="40" placeholder="Name of service" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Category of service:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="fld_category" id="Category" size="40" placeholder="Category of service" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Labourer First name:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="fld_firstname" id="FirstName" size="40" placeholder="Labourer first name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="titleoflabel">Labourer Last name:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="fld_lastname" id="LastName" size="40" placeholder="Labourer last name" />
+                    </td>
+                </tr>
+                <tr><td><input type="button" id="btnSearch" value="Search"></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+

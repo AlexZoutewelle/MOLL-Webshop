@@ -1,0 +1,26 @@
+﻿
+<style>
+button {
+        background-color: #ffac35;
+        padding: 5px 20px;
+        border: none;
+        opacity: 0.9;
+        margin: auto;
+        display: inline-block;
+        cursor: pointer;
+        font-family: 'Open Sans';
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 10px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+</style>
+
+
+<form asp-action="SimpleSearch" method="get" asp-controller="Search" id="searchbar" id="search">
+    <input name="simpleQuery" type="text" size="40" placeholder="Search service..." />
+    <button type="submit">Search</button>
+</form>

@@ -1,0 +1,96 @@
+﻿@model List<TestWebApp.Models.ProductPackage.OfferedLabourerService>
+@using TestWebApp.Models.ProductPackage;
+<style>
+    #x:hover {
+        color: #ed5050;
+    }
+    .btnServiceModal {
+        cursor: pointer;
+    }
+
+</style>
+<section class="section-content bg padding-y-sm">
+    <div class="container" id="SearchResult">
+        <div class="row-sm">
+            @{if (Model.Count != 0)
+                {
+                    foreach (var pack in Model)
+                    {
+                        <div class="col-md-3 col-sm-6 btnServiceModal" id="@pack.fld_offeredserviceid">
+                            <figure class="card card-product">
+                                <div class="img-wrap"><p>@pack.fld_name</p><img src="@pack.fld_imagelink" /></div>
+                                <figcaption class="info-wrap">
+                                    <div class="price-wrap">
+                                        <span class="serviceprice">€ @pack.fld_cost</span>
+                                        <span class="sold"><img src="~/images/tile_sold.png" />@pack.fld_timesbought</span>
+                                        <span class="like"><img src="~/images/tile_like.png" />@pack.fld_addedtowishlist</span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        var Serviceid = "ServiceDetails" + pack.fld_offeredserviceid;
+                        <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" id="@Serviceid" style="z-index: 999999999;">
+                            <div class="modal-dialog modal-lg" style="z-index: 999999999;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button id="x" type="button" class="close" data-dismiss="modal">
+                                            X
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @{ Html.RenderPartial("../Service/Details", pack); }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+                if (Model.Count <= 0)
+                {
+                    <style>
+
+                        body {
+                            overflow: hidden;
+                        }
+                    </style>
+                    <div id="nosearchresult">
+                        <div id="section_form">
+                            <div id="rectangle">
+                                <div class="searchform">
+                                    <table id="noservicesfound">
+                                        <tbody>
+                                            <tr>
+                                                <th id="noservice">No services found. Please use another filter.</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</section>
+<script>
+
+    $(document).ready(function () {
+        $(".btnServiceModal").click(function () {
+            console.log('Popup button clicked');
+            var id = $(this).attr('id');
+            console.log(id);
+            $("#ServiceDetails" + id).modal('show');
+        });
+
+        $(".btnHideModal").click(function () {
+            console.log('Popup Hide button clicked');
+            var id = $(this).attr('id');
+            $("#ServiceDetails" + id).modal('hide');
+        });
+    });
+</script>

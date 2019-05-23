@@ -1,0 +1,177 @@
+﻿@model TestWebApp.Models.OLSSearchModel
+@using TestWebApp.Models;
+@using Microsoft.AspNetCore.Mvc.ModelBinding;
+@using Microsoft.AspNetCore.Routing;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<style>
+
+    /*Searchform horizontal*/
+    .searchform_admin {
+        position: relative;
+        bottom: 124px;
+        width: 100vw;
+        height: 60px;
+        background: #333333;
+    }
+    #search_hor{
+        margin: auto;
+    }
+    form {
+        padding-top: 14px;
+    }
+    .searchLabel {
+        color: white;
+        font-size: 8px;
+        min-width: 1px;
+        max-width: 160px;
+        display: inline-block;
+    }
+    select {
+        display: inline-block;
+        border: 1px solid #d1d1d1;
+        font: bold 10px Arial, Helvetica, Sans-serif;
+        color: #bebebe;
+        width: 110px;
+        padding: 6px 10px 6px 6px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+        outline: none;
+        position: relative;
+        top: 0px;
+        left: 3px;
+        margin-right: 7px;
+    }
+    #Gender {
+        width: 75px;
+    }
+    #Category {
+        width: 114px;
+    }
+    input {
+        display: inline-block;
+        border: 1px solid #d1d1d1;
+        font: bold 12px Arial, Helvetica, Sans-serif;
+        color: #bebebe;
+        width: 100px;
+        padding: 6px 10px 6px 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+        outline: none;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    #LowerCost {
+        width: 60px;
+    }
+    #HigherCost {
+        width: 60px;
+    }
+    #TimeAvailableBegin {
+        width: 80px;
+    }
+    #TimeAvailableEnd {
+        width: 80px;
+    }
+
+</style>
+<body>
+    <div class="searchform_admin">
+        <form>
+            <table id="search_hor">
+                <tbody>
+                    <tr>
+                        <td>
+                        <th class="searchLabel">Area:</th></td>
+                        <td>
+                            <select name="fld_Area" id="Area">
+                                <option style="display:none" disabled selected></option>
+                                <option value="Drenthe">Drenthe</option>
+                                <option value="Flevoland">Flevoland</option>
+                                <option value="Friesland">Friesland</option>
+                                <option value="Gelderland">Gelderland</option>
+                                <option value="Groningen">Groningen</option>
+                                <option value="Limburg">Limburg</option>
+                                <option value="Noord-Brabant">Noord-Brabant</option>
+                                <option value="Noord-Holland">Noord-Holland</option>
+                                <option value="Overijssel">Overijssel</option>
+                                <option value="Utrecht">Utrecht</option>
+                                <option value="Zeeland">Zeeland</option>
+                                <option value="Zuid-Holland">Zuid-Holland</option>
+                            </select>
+                        </td>
+
+                        <td>
+                        <th class="searchLabel">Gender:</th></td>
+                        <td>
+                            <select name="fld_gender" id="Gender">
+                                <option style="display:none" disabled selected></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+
+                        <td>
+                        <th class="searchLabel">Cost from:</th></td>
+                        <td><input type="number" name="lowerCost" min="1" max="1000" id="LowerCost" /></td>
+
+                        <td>
+                        <th class="searchLabel">Highest cost:</th></td>
+                        <td><input type="number" name="higherCost" min="1" max="1000" id="HigherCost" /></td>
+
+                        <td>
+                        <th class="searchLabel">Available from:</th></td>
+                        <td><input type="time" name="timeAvailableBegin" id="TimeAvailableBegin" /></td>
+
+                        <td>
+                        <th class="searchLabel">Available until:</th></td>
+                        <td><input type="time" name="timeAvailableEnd" id="TimeAvailableEnd" /></td>
+
+                        <td>
+                        <th class="searchLabel">Name of Service:</th></td>
+                        <td><input type="text" name="fld_name" id="ServiceName" size="40" /></td>
+
+                        <td>
+                        <th class="searchLabel">Category of service:</th></td>
+                        <td>
+                            <select name="fld_category" id="Category">
+                                <option style="display:none" disabled selected></option>
+                                <option value="Carmechanics">Car mechanics</option>
+                                <option value="ComputerFixes">Computer Fixes</option>
+                                <option value="Health">Health</option>
+                                <option value="Housechores">House chores</option>
+                                <option value="Miscellaneous">Miscellaneous</option>
+                                <option value="Schooltutoring">School tutoring</option>
+                            </select>
+                        </td>
+
+                        <td>
+                        <th class="searchLabel">Labourer First name:</th></td>
+                        <td><input type="text" name="fld_firstname" id="FirstName" size="40" /></td>
+
+                        <td>
+                        <th class="searchLabel">Labourer Last name:</th></td>
+                        <td><input type="text" name="fld_lastname" id="LastName" size="40" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
