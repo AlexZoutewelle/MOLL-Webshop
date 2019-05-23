@@ -1,0 +1,272 @@
+﻿#section_form {
+    background: #f4f4f4;
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+}
+
+#circlelogo {
+    width: 8vw;
+    height: auto;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 20px;
+    z-index: 999;
+}
+
+#rectangle {
+    width: 65vw;
+    height: auto;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 950;
+}
+
+#post-avatar {
+    width: 12vw;
+    margin-left: 50px;
+}
+
+#section_form table {
+    width: 62vw;
+    margin: auto;
+}
+
+tbody h1 {
+    color: #444444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    display: inline-block;
+}
+
+#gender {
+    display: inline-block;
+    padding-left: 8px;
+    width: 40px;
+    position: relative;
+    top: 4px;
+}
+
+#like2 {
+    display: inline-block;
+    width: 30px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+
+#wishlist2 {
+    color: #b9b9b9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+#rankingtext {
+    position: relative;
+    bottom: 100px;
+    padding-left: 30px;
+    color: #b9b9b9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+#score {
+    position: relative;
+    bottom: 130px;
+    color: #444444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    padding-left: 30px;
+    display: inline-block;
+}
+
+#ranking {
+    width: 150px;
+    height: auto;
+    position: relative;
+    bottom: 127px;
+    left: 10px;
+}
+
+#plane {
+    width: 35px;
+    position: relative;
+    bottom: 150px;
+    left: 25px;
+}
+
+#sendmessagetext {
+    color: #444444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    padding-left: 35px;
+    padding-right: 25px;
+    display: inline-block;
+    position: relative;
+    bottom: 158px;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #ffac35;
+    color: grey;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 120px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 7px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    bottom: 155px;
+}
+
+    button:hover {
+        opacity: 0.75;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+#imgtd {
+    width: 300px;
+}
+
+#serviceimg {
+    border-radius: 10px;
+    width: 17vw;
+}
+
+#servicedescription {
+    color: #444444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    display: inline-block;
+    max-width: 40vw
+}
+
+#serviceinfo {
+    position: relative;
+    bottom: 100px;
+}
+
+
+
+
+
+.registrationform table {
+    border: 0px solid #ffac35;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.registrationform th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 45px;
+    font-size: 12px;
+    color: #ffac35;
+}
+
+.registrationform input {
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+/* Full-width input fields */
+.registrationform [type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+/* Full-width input fields */
+.registrationform [type=password] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+
+.registrationform input[type=password]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+.registrationform input[type=text]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+.line {
+    color: #ffac35;
+    width: 61vw;
+    margin-right: -200px;
+    height: 3px;
+    background: #ffac35;
+    position: relative;
+    bottom: 145px;
+}

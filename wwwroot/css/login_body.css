@@ -1,0 +1,813 @@
+﻿html, body {
+    padding-top: 5rem;
+    width: 100%;
+}
+
+#post-avatar2 {
+    width: 12vw;
+    margin-left: 50px;
+}
+
+#section_form {
+    background: #f4f4f4;
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+}
+
+#circlelogo {
+    width: 8vw;
+    height: auto;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 20px;
+    z-index: 999;
+}
+
+#rectangle {
+    width: 40vw;
+    height: auto;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 950;
+}
+
+#forgotpass {
+    color: #ffac35;
+    font-style: italic;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    float: right;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    margin-top: -20px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    #forgotpass:hover {
+        color: #eda031;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+#tdforgotpass {
+    width: 25vw;
+    height: auto;
+}
+
+#tdnoaccount {
+    width: 25vw;
+    padding-top: 10px;
+}
+
+    #tdnoaccount a {
+        text-align: center;
+        color: #b9b9b9;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        #tdnoaccount a:hover {
+            color: #9a9a9a;
+            font-weight: 600;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+/* Set a style for all buttons */
+.labourerdetails table {
+    border: 0px solid #ffac35;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.labourerdetails th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 45px;
+    font-size: 12px;
+    
+}
+
+
+.registrationform button {
+    background-color: #ffac35;
+    color: grey;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 210px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    .registrationform button:hover {
+        opacity: 0.75;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+.registrationform table {
+    border: 0px solid #ffac35;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.registrationform th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 45px;
+    font-size: 12px;
+    color: #ffac35;
+}
+
+.registrationform input {
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+/* Full-width input fields */
+.registrationform [type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+/* Full-width input fields */
+.registrationform [type=password] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+
+.registrationform input[type=password]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+.registrationform input[type=text]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+/* Set a style for all buttons */
+
+@media only screen and (max-width: 1100px) {
+    #circlelogo {
+        width: 10vw;
+        height: auto;
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 30px;
+        z-index: 999;
+    }
+
+    #tdforgotpass {
+        width: 30vw;
+        height: auto;
+    }
+
+    #rectangle {
+        width: 50vw;
+        height: auto;
+        background: white;
+        padding: 30px;
+        margin: auto;
+        border-radius: 30px;
+        position: relative;
+        z-index: 950;
+    }
+
+    #tdnoaccount {
+        width: 30vw;
+        padding-top: 10px;
+    }
+
+        #tdnoaccount a {
+            text-align: center;
+            color: #b9b9b9;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+            #tdnoaccount a:hover {
+                color: #9a9a9a;
+                font-weight: 600;
+                -moz-transition: all 0.2s ease 0s;
+                -o-transition: all 0.2s ease 0s;
+                transition: all 0.2s ease 0s;
+            }
+
+    .registrationform input {
+        width: 30vw;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        .registrationform input[type=text]:focus {
+            width: 30vw;
+            background-color: none;
+            outline: none;
+            -webkit-transition: all 0.7s ease 0s;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+            border-color: #ffd59a;
+        }
+}
+
+@media only screen and (max-width: 1050px) {
+    #tdforgotpass {
+        width: 50vw;
+        height: auto;
+    }
+
+    #forgotpass {
+        color: #ffac35;
+        font-style: italic;
+        font-weight: 600;
+        font-family: 'Raleway', sans-serif;
+        float: right;
+        font-size: 16px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        #forgotpass:hover {
+            color: #eda031;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+    #circlelogo {
+        width: 14vw;
+        height: auto;
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 30px;
+        z-index: 999;
+    }
+
+    #rectangle {
+        width: 80vw;
+        height: auto;
+        background: white;
+        padding: 30px;
+        margin: auto;
+        border-radius: 30px;
+        position: relative;
+        z-index: 950;
+    }
+
+    #tdnoaccount {
+        width: 30vw;
+        padding-top: 10px;
+    }
+
+        #tdnoaccount a {
+            text-align: center;
+            color: #b9b9b9;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+            #tdnoaccount a:hover {
+                color: #9a9a9a;
+                font-weight: 600;
+                -moz-transition: all 0.2s ease 0s;
+                -o-transition: all 0.2s ease 0s;
+                transition: all 0.2s ease 0s;
+            }
+
+    .registrationform input {
+        width: 50vw;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        .registrationform input[type=text]:focus {
+            width: 52vw;
+            background-color: none;
+            outline: none;
+            -webkit-transition: all 0.7s ease 0s;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+            border-color: #ffd59a;
+        }
+}
+
+@media only screen and (max-width: 500px) {
+    #tdforgotpass {
+        width: 70vw;
+        height: auto;
+    }
+
+    #forgotpass {
+        color: #ffac35;
+        font-style: italic;
+        font-weight: 600;
+        font-family: 'Raleway', sans-serif;
+        float: right;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+        font-size: 16px;
+    }
+
+        #forgotpass:hover {
+            color: #eda031;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+    #circlelogo {
+        width: 30vw;
+        height: auto;
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 30px;
+        z-index: 999;
+    }
+
+    #rectangle {
+        width: 90vw;
+        height: auto;
+        background: white;
+        padding: 30px;
+        margin: auto;
+        border-radius: 30px;
+        position: relative;
+        z-index: 950;
+    }
+
+    #tdnoaccount {
+        width: 70vw;
+        padding-top: 10px;
+    }
+
+        #tdnoaccount a {
+            text-align: center;
+            color: #b9b9b9;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+            #tdnoaccount a:hover {
+                color: #9a9a9a;
+                font-weight: 600;
+                -moz-transition: all 0.2s ease 0s;
+                -o-transition: all 0.2s ease 0s;
+                transition: all 0.2s ease 0s;
+            }
+
+    .registrationform input {
+        text-align: center;
+        width: 70vw;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        .registrationform input[type=text]:focus {
+            width: 70vw;
+            background-color: none;
+            outline: none;
+            -webkit-transition: all 0.7s ease 0s;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+            border-color: #ffd59a;
+        }
+}
+
+
+
+/*--------------------Navigation--------------------*/
+.navbar-top {
+    position: fixed;
+    top: 0;
+    background-color: #333333;
+    width: 100%;
+    height: 55px;
+    padding: 0px 12vw 0px 12vw;
+    z-index: 1000;
+}
+
+    .navbar-top a img {
+        width: 190px;
+        margin: 10px 0vw 0vw 0vw;
+    }
+
+    .navbar-top table {
+        /*display: inline-block;*/
+        width: 300px;
+        float: right;
+        margin-right: -99px;
+        height: 50px;
+    }
+
+#navtd2 {
+    padding-right: 20px;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .navbar-top a img {
+        width: 190px;
+        margin: 10px 0vw 0vw 0vw;
+        position: relative;
+        right: 25px;
+    }
+
+    #navtd2 {
+        padding-right: 20px;
+    }
+
+    .navbar-top table {
+        position: relative;
+        bottom: 60px;
+        left: 30px;
+        display: inline-block;
+        width: auto;
+        float: right;
+    }
+}
+
+
+
+.navbar-top table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navbar-top ul li {
+    list-style: none;
+    margin-left: -25px;
+    margin: 12px 0px 0px 0px;
+}
+
+.navbar-top a {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+}
+
+    .navbar-top a:hover {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        opacity: 0.85;
+        text-decoration: none;
+    }
+
+.navbar-top td img {
+    display: inline-block;
+    width: 85px;
+    height: auto;
+    padding-bottom: 12px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px 0px 0px 0px;
+    position: relative;
+    right: 93px;
+    z-index: 1;
+}
+
+#navtd3 img:hover {
+    background-image: url('images/btn_SignUp-highlighted.png');
+}
+
+.form-inline {
+    float: right;
+    width: auto;
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#searchbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial, Helvetica, Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #searchbar input[type="text"]:focus {
+        width: 200px;
+        outline: none;
+    }
+
+.navbar {
+    margin-top: -100px;
+}
+
+.totalnav {
+    position: sticky;
+    top: 54px;
+    z-index: 1000;
+}
+
+.navbar li a {
+    font-family: 'Montserrat', sans-serif;
+    color: darkgray;
+    font-weight: 500;
+    margin-right: 0px;
+}
+
+.navbar-collapse {
+    margin: 0px 0px 0px -40px;
+    padding: 0px 11vw 0px 12vw;
+    height: 85px;
+}
+
+
+/*--------------------Under Header--------------------*/
+#menu_underheader {
+    height: 60px;
+    width: 100%;
+    background: #fafafa;
+}
+
+    #menu_underheader h1 {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        margin: auto;
+        width: auto;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 20px;
+    }
+
+#underheader {
+    height: 60px;
+    padding-top: 12px;
+}
+
+    #underheader table {
+        position: relative;
+        bottom: 64px;
+        left: 58vw;
+    }
+
+        #underheader table img {
+            width: 20px;
+            height: auto;
+            position: relative;
+            bottom: 3px;
+            margin-left: 10px;
+        }
+
+            #underheader table img:hover {
+                opacity: .9;
+            }
+
+    #underheader p {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        position: relative;
+        top: 8px;
+        margin-right: 15px;
+    }
+
+#filterbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px;
+    border: 1px solid;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #b9b9b9;
+    width: 14vw;
+    padding: 10px 15px 10px 15px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #filterbar input[type="text"]:focus {
+        width: 20vw;
+        outline: none;
+    }
+
+
+
+/*--------------------Recent Services--------------------*/
+#recentservices {
+    background-color: blue;
+    width: 100%;
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    #underheader p {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        position: relative;
+        top: 8px;
+        margin-right: 15px;
+    }
+
+    #filterbar input[type="text"] {
+        background: url(search-white.png) no-repeat 10px 6px;
+        border: 1px solid;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        color: #b9b9b9;
+        width: 12vw;
+        padding: 8px 1px 8px 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+        outline: none;
+    }
+
+        #filterbar input[type="text"]:focus {
+            width: 13vw;
+            outline: none;
+        }
+}
+
+@media only screen and (max-width: 790px) {
+    .navbar-collapse {
+        margin: 0px 0px 0px -40px;
+        padding: 0px 11vw 15px 12vw;
+        height: auto;
+    }
+
+    #underheader table img {
+        width: 25px;
+        height: auto;
+        position: relative;
+        bottom: 3px;
+        margin-left: 10px;
+    }
+
+    #underheader p {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        position: relative;
+        top: 8px;
+        margin-right: 15px;
+    }
+
+    #underheader {
+        height: 60px;
+        padding-top: 60px;
+    }
+
+        #underheader table {
+            position: relative;
+            bottom: 64px;
+            left: 17vw;
+        }
+
+    #filterbar input[type="text"] {
+        background: url(search-white.png) no-repeat 10px 6px;
+        border: 1px solid;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        color: #b9b9b9;
+        width: 45vw;
+        padding: 8px 1px 8px 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+        outline: none;
+    }
+
+        #filterbar input[type="text"]:focus {
+            width: 55vw;
+            outline: none;
+        }
+}

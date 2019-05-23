@@ -1,0 +1,315 @@
+﻿@model TestWebApp.Models.tbl_userdata
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<head>
+    <title>My Account</title>
+</head>
+<style>
+    #userdata2{
+        margin: auto;
+        width: 80vw;
+        border: 2px solid;
+    }
+        #userdata2 td {
+            width:40px;
+            border: 2px solid;
+        }
+    #userdata [type=text], input[type=password], input[type=date], [type=email], [type=tel] {
+        width: 18vw;
+    }
+
+    #tblbuttons{
+        width: 62vw;
+        margin: auto;
+        margin-bottom: 70px;
+    }
+    .titleText {
+        position: relative;
+        top: 10px;
+    }
+    .titleTextData {
+        position: relative;
+        bottom: 28px;
+        right: 7px;
+        font-size: 14px
+    }
+    #accountinfo{
+        width: 65vw;
+        margin: auto;
+    }
+    #accountinfo [type=password]{
+        position: relative;
+        left: 4px;
+    }
+    #accountinfo [type=email] {
+        position: relative;
+        left: 4px;
+    }
+    #datefield {
+        position: relative;
+        left: 4px;
+    }
+    #accountinfo input {
+        width: 17vw;
+        height: 55px;
+        padding: 15px;
+        display: inline-block;
+        border-style: solid;
+        border-color: #ffac35;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+        position: relative;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #ffac35;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+    input {
+        margin-bottom: 15px;
+    }
+    #accountinfo select {
+        margin-bottom: 15px;
+        position: relative;
+        left: 1px;
+        bottom: 10px;
+        width: 17vw;
+        height: 55px;
+        font-size: 14px;
+        padding: 0px 0px 0px 10px;
+        display: inline-block;
+        border-style: solid;
+        border-color: #ffac35;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+        border-radius: 10px;
+    }
+    #submitbutton {
+        padding: 15px 15px;
+        width: 200px;
+        height: 70px;
+        font-size: 18px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        #submitbutton:hover {
+            opacity: .7;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+</style>
+<body bgcolor="#f4f4f4">
+    <div id="menu_underheader">
+        <h1>@Html.DisplayFor(model => model.fld_username) 's account | My Account Details</h1>
+    </div>
+
+    <div id="section_form_acc">
+        <div id="rectangle_acc">
+            <table id="tblbuttons">
+                <tbody>
+                    <tr>
+                        <td><button onclick="location.href='@Url.Action("MyOrders", "Account")'">My Orders</button></td>
+                        
+                        <td><button>Delete Account</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="rectangle">        
+            <form asp-action="ChangeAccount" asp-controller="Account" method="post">
+                <table id="accountinfo">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Username:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_username)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="text" placeholder="Username" name="fld_username" minlength="3" maxlength="25" pattern="[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$*"></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Password:</p></td>
+                                            <td><p class="titleTextData">*************</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="password" placeholder="Enter Password" name="fld_password" minlength="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 4 or more characters." oninput="document.getElementById('confirm').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\^\$\|]/g, '\$&')" /></td>
+                            <td><input id="confirm" type="password" placeholder="Repeat Password" name="alterRepeatPassword" minlength="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" title="Password must be the same as previously entered." /></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">First Name:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_firstname)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="text" name="fld_firstname" placeholder="First Name" minlength="2" maxlength="50" accept-charset="ISO-8859-1" pattern="[a-zA-Z]{2,}" title="Your name must be between 2 and 50 alphabetical characters (abcdef..)" /></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Last Name:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_lastname)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="text" placeholder="Last Name" name="fld_lastname" minlength="2" maxlength="50" accept-charset="ISO-8859-1" pattern="[a-zA-Z]{2,}" title="Your last name must be between 2 and 50 alphabetical characters (abcdef..)" /></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Email:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_email)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="email" placeholder="Email Address" name="fld_email" pattern="a-z0-9._%+-]+a-z0-9.-]+\.[a-z]{2,3}$" title="Email must follow following example: example.example.com" /></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Gender:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_gender)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <select name="fld_gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Address:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_address)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="text" name="fld_address" placeholder="Address" minlength="2" maxlength="60" pattern="(?=.*\d)(?=.*[a-z]).{2,}" title="Must contain a streetname and a number like 'Bieslook 17', streetname must have at least 2 characters."></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Zip Code:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_zipcode)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="text" name="fld_zipcode" placeholder="Zip Code" title="Zip-code must follow standard rules. Example: 1234 AB" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}"></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Date of Birth:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_dateofbirth)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <input id="datefield" type="date" name="fld_dateofbirth" min='1900-01-01' max='2000-13-13' placeholder="Date of Birth (DD/MM/YYYY)" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" />
+                                <script type="text/javascript">
+                                    var today = new Date();
+                                    var dd = today.getDate();
+                                    var mm = today.getMonth() + 1; //January is 0!
+                                    var yyyy = today.getFullYear();
+                                    if (dd < 10) {
+                                        dd = '0' + dd
+                                    }
+                                    if (mm < 10) {
+                                        mm = '0' + mm
+                                    }
+                                    today = yyyy + '-' + mm + '-' + dd;
+                                    document.getElementById("datefield").setAttribute("max", today);
+                                </script>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="titleData"><p class="titleText">Phone Number:</p></td>
+                                            <td><p class="titleTextData">@Html.DisplayFor(model => model.fld_phonenumber)</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><input type="tel" name="fld_phonenumber" placeholder="Phone Number" id="phone" pattern="[+]{1}[0-9]{11,13}" title="A phone number must consist of a + and at least 11 numbers for example (+31612345678)" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="submitbutton" type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <form action="action_page.php">
+        <div class="container2">
+        </div>
+    </form>
+</body>

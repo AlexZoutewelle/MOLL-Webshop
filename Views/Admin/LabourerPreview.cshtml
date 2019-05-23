@@ -1,0 +1,161 @@
+﻿@model TestWebApp.Models.tbl_labourerdata
+@using TestWebApp.Controllers;
+@using Microsoft.AspNetCore.Http;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+</head>
+<style>
+
+    #section_form {
+        background: #f4f4f4;
+    }
+
+    #popupcontainer {
+        margin: auto;
+    }
+
+    #post-avatar {
+        width: 80px;
+        border-radius: 50px;
+        margin: auto;
+        position: relative;
+        top: 30px;
+        right: 25px;
+    }
+
+    #popupcontainer p {
+        text-decoration: none;
+        color: #444444;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #popupcontainer a {
+        text-decoration: none;
+        color: #444444;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+        #popupcontainer a:hover {
+            opacity: .7;
+        }
+
+    #serviceimg {
+        border-radius: 10px;
+    }
+
+    #popupcontainer button:hover {
+        opacity: 0.75;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+    .addToCartBtn {
+        background-color: #ffac35;
+        color: grey;
+        padding: 10px 10px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+        width: 130px;
+        font-family: 'Open Sans';
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+    .line {
+        color: #feb348;
+        background: #feb348;
+        height: 2px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #labnaam {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    #popupcontainer h1 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #444444;
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+<body bgcolor="#f4f4f4">
+
+    <div id="section_form" class="ItemPreviewDiv" style="border: 1px solid black;">
+        <table id="popupcontainer">
+            <tbody>
+                <tr>
+                    <td>
+                        @{
+                            string img = "post-user-avatar.png";
+                            if (Model.fld_gender == "Female")
+                            {
+                                img = "post-user-avatar-female.png";
+                            }
+                        }
+                        <img id="post-avatar" src="~/images/@img" />
+                    </td>
+                    <td><p style="font-weight: 600; position: relative; top: 10px;">@Model.fld_firstname @Model.fld_lastname</p></td>
+                    <td><a><img id="like2" src="~/images/like.png" /></a></td>
+
+                    <td><h2 id="wishlist2"><a href="#">Add to Favourites</a></h2></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p style="position: relative; bottom: 20px;">@Model.fld_address @Model.fld_zipcode</p></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p style="position: relative; bottom: 30px;">@Model.fld_email</p></td>
+                    <td></td>
+                    <td><button id="Y">Add to cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="line"></div>
+        <table id='popupcontainer'>
+            <tbody>
+                <tr>
+                    <td>
+                        <img id="serviceimg" src="https://i.imgur.com/P9zsSmx.png" />
+                    </td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><h1>Name of Service</h1></td>
+                                </tr>
+                                <tr>
+                                    <td><p><i>Service Category</i></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>This is a placeholder for the description of a service. You are currently looking at an example, just so you can see what it would look like!</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>

@@ -1,0 +1,290 @@
+﻿@model Tuple<List<Order>, List<tbl_orderstatus>, List<List<tbl_orderhistory>>, List<OfferedLabourerService>>
+@using TestWebApp.Models.Orders;
+@using TestWebApp.Models;
+@using TestWebApp.Models.ProductPackage;
+
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<style>
+    .GridDiv {
+        display: grid;
+        grid-template-columns: max-content auto 15% 18% 10%;
+        text-align: center;
+    }
+
+    .GridHeader {
+        background-color: #dbdbdb;
+        padding: 5px;
+        margin: 10px;
+        position: relative;
+    }
+
+        .GridHeader p {
+            position: relative;
+            text-align: center;
+            top: 20%;
+        }
+
+    .GridElement {
+        padding: 5px;
+        font-size: 12px;
+        position: relative;
+        margin: 10px
+    }
+
+        .GridElement img {
+            border: 1px solid black;
+            max-height: 100px;
+            margin: 5px;
+            float: left;
+        }
+
+        .GridElement p {
+            position: relative;
+            text-align: center;
+            top: 20%;
+        }
+
+        .GridElement .OlsText {
+            float: left;
+            text-align: left;
+            margin: 5px;
+        }
+
+        .GridElement .verticalCenter {
+            position: absolute;
+            top: 30%;
+        }
+
+        .GridElement:hover {
+            transition: background-color 1s ease;
+            background-color: #dbdbdb;
+        }
+    .GridElementButton{
+        padding: 5px;
+        font-size: 12px;
+        position: relative;
+        margin: 10px;
+    }
+
+        .GridElementButton p {
+            position: relative;
+            text-align: center;
+            top: 20%;
+        }
+
+    .ExpandHistoryBtn {
+        font-size: 11px;
+        position: relative;
+        top: 25%;
+        display: block;
+    }
+
+    .btnServiceModal:hover {
+        cursor: pointer;
+       
+    }
+
+    .historyGrid {
+        display: grid;
+        grid-template-columns: 15% auto 15% 18% 10%;
+        text-align: center;
+    }
+
+    .modal {
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <section class="section-content bg padding-y-sm">
+        <div class="container">
+            @if(Model.Item1.Count < 1)
+            {
+                <p>You have not yet ordered anything!</p>
+            }
+            @foreach (var order in Model.Item1)
+            {
+                int orderId = order.fld_OrderId;
+                string emailUsed = order.fld_email;
+                int olsId = order.fld_OfferedServiceId;
+
+                tbl_orderstatus orderStatus = Model.Item2.Single(s => s.fld_orderid == orderId);
+                OfferedLabourerService OLS = Model.Item4.Single(s => s.fld_offeredserviceid == olsId);
+                var orderHistory = Model.Item3.SelectMany(d => d).Where(f => f.fld_orderid == orderId).ToList();
+
+
+                <div class="GridDiv">
+                    <div class="GridHeader">
+                        <p>Order id</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Service</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Target Delivery date</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Email used</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Status<p></p>
+                    </div>
+
+
+                    <div class="GridElementButton">
+                        <p>@order.fld_OrderId</p> 
+                        <button class="ExpandHistoryBtn" id="@order.fld_OrderId">View History</button>
+
+                    </div>
+
+                    <div class="GridElement btnServiceModal" id="@order.fld_OfferedServiceId">
+                        <img src="@OLS.fld_imagelink" />
+                        <div class="OlsText">
+                            @OLS.fld_name
+                            <br />
+                            Offered by:
+                            <br />
+                            @OLS.fld_firstname @OLS.fld_lastname
+
+                            <br />
+                            $@OLS.fld_cost
+
+                        </div>
+                    </div>
+
+
+                    <div class="GridElement">
+                        <p>@orderStatus.fld_targetDeliveryDate</p>
+                    </div>
+
+                    <div class="GridElement">
+                        <p>@order.fld_email</p>
+                    </div>
+
+                    <div class="GridElement">
+                        <p>@orderHistory[0].fld_orderstatus</p>
+                    </div>
+                </div>
+
+                var id = "history" + order.fld_OrderId;
+                <div class="historyGrid" id="@id" style="display: none;">
+                    <div class="GridHeader" style="opacity: 0;">
+                    </div>
+
+                    <div class="GridHeader" style="opacity: 0;">
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Action Date</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Last Action</p>
+                    </div>
+
+                    <div class="GridHeader">
+                        <p>Status</p>
+                    </div>
+                    @foreach (var history in orderHistory)
+                    {
+
+                        <div class="GridElement">
+                        </div>
+
+                        <div class="GridElement">
+                        </div>
+
+                        <div class="GridElement">
+                            <p>@history.fld_ActionDate</p>
+                        </div>
+
+                        <div class="GridElement">
+                            <p>@history.fld_lastAction</p>
+                        </div>
+
+                        <div class="GridElement">
+                            <p>@history.fld_orderstatus</p>
+                        </div>
+                    }
+                </div>
+
+                var Serviceid = "ServiceDetails" + OLS.fld_offeredserviceid;
+                <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" id="@Serviceid">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    X
+                                </button>
+
+                                <h4 class="modal-title"> @OLS.fld_name </h4>
+                            </div>
+
+                            <div class="modal-body">
+                                @{ Html.RenderPartial("../Service/Details", OLS); }
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" id="@OLS.fld_offeredserviceid" class="btn btn-primary button button4 btnHideModal">
+                                    Hide
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+    $(document).ready(function(){
+      $(".ExpandHistoryBtn").click(function(){
+       console.log('Button clicked');
+
+        var button = $(this);
+        var id = button.attr('id');
+        console.log(id);
+
+        var content = $("#history" + id);
+        console.log(content);
+
+        content.slideToggle(200, function () {
+
+            button.text(function () {
+                return content.is(":visible") ? "Hide History" : "View History";
+            });
+        });
+      });
+    });
+
+
+
+    $(document).ready(function () {
+        $(".btnServiceModal").click(function () {
+            console.log('Popup button clicked');
+            var id = $(this).attr('id');
+            $("#ServiceDetails" + id).modal('show');
+        });
+
+        $(".btnHideModal").click(function () {
+            console.log('Popup Hide button clicked');
+            var id = $(this).attr('id');
+            $("#ServiceDetails" + id).modal('hide');
+        });
+    });
+</script>
+

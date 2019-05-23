@@ -1,0 +1,339 @@
+﻿
+@using TestWebApp.Models;
+@using Newtonsoft.Json;
+@model List<TestWebApp.Models.tbl_labourerdata>
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+</head>
+<style>
+
+
+    div {
+        display: block;
+    }
+
+    .formDiv {
+        overflow: auto;
+        max-height: 800px;
+        padding: 5px 10%;
+    }
+
+    .inputField::after {
+        clear: both;
+        line-height: 0;
+        visibility: hidden;
+    }
+
+    .inputField label {
+        width: 40%;
+        padding-top: 6px;
+    }
+
+    inputField input {
+        float: right;
+        width: 60px;
+    }
+
+    .highlight {
+        background-color: #aab7d1 !important;
+        color: black !important;
+    }
+
+    #btnDelete {
+        float: left;
+        display: inline;
+    }
+
+    tr:hover {
+        background-color: #d9d9db !important
+    }
+
+
+
+    .dtButtons {
+        max-width: 100%;
+        margin: 0 auto;
+        clear: both;
+    }
+</style>
+<section class="section-content bg padding-y-sm" style="display: block; margin: auto">
+    <div class="dtButtons">
+        <button id="btnCreate">Create</button>
+        <button class="btnEdit" id="#tbl_managelabourers">Edit</button>
+        <button id="btnDelete">Delete</button>
+
+    </div>
+    <table id="tbl_managelabourers" class="DataTableDiv">
+        <thead>
+            @foreach (System.Reflection.PropertyInfo property in typeof(TestWebApp.Models.tbl_labourerdata).GetProperties())
+            {
+            <th>@property.Name</th>
+        }
+            </thead>
+            <tbody>
+                @foreach (var labourer in Model)
+                {
+                    <tr class="clickableRow" id="@labourer.fld_labourerid">
+                        @foreach (System.Reflection.PropertyInfo property in typeof(TestWebApp.Models.tbl_labourerdata).GetProperties())
+                        {
+
+                            <td>@property.GetValue(labourer)</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <!--Modal for creation-->
+
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" id="ModalCreate">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            X
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="formDiv">
+                            <form id="newItemForm">
+                                @foreach (System.Reflection.PropertyInfo property in typeof(TestWebApp.Models.tbl_labourerdata).GetProperties())
+                                {
+                                    if (property.Name == "fld_labourerid")
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        <div class="inputField">
+                                            <label>@property.Name:</label>
+                                            <input name="@property.Name" id="@property.Name" />
+                                        </div>
+                                    }
+                                }
+                                <input type="hidden" value="tbl_labourerdata" id="objectType" />
+                            </form>
+                        </div>
+                        <p>Preview: </p>
+                        <div class="CreationItemPreviewDiv">
+                            <div class="itemPreviewDiv">
+                                Click the Render Preview button to preview the service
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnCreateNew">Create</button>
+                        <button id="btnRenderCreationPreview">Render Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal for deletion-->
+
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" id="ModalDelete">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button id="X" type="button" class="close" data-dismiss="modal">
+                            X
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to Delete the item? </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnDeleteRow">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal for updating-->
+
+        @{ var counter = 1;}
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" id="ModalEdit">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button id="X" type="button" class="close" data-dismiss="modal">
+                            X
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="formDiv">
+                            <form id="updateItemForm">
+                                @foreach (System.Reflection.PropertyInfo property in Model.First().GetType().GetProperties())
+                                {
+                                    var idForInput = "editInput" + counter;
+
+                                    if (property.Name == "fld_labourerid")
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        <div class="inputField">
+                                            <label>@property.Name:</label>
+                                            <input name="@property.Name" id="@idForInput" />
+                                        </div>
+                                        counter = counter + 1;
+
+                                    }
+                                }
+                                <input type="hidden" value="tbl_labourerdata" id="objectType" />
+                            </form>
+                        </div>
+                        <p>Preview: </p>
+                        <div class="UpdateItemPreviewDiv">
+                            <div class="itemPreviewDiv">
+                                ...Loading preview...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnUpdateRow">Update</button>
+                        <button id="btnRenderUpdatePreview" value="update">Render Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        $(document).ready(function () {
+
+
+            $('#tbl_managelabourers').DataTable({
+                "columns": [
+                    { "width": "2%" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+                ,
+                "createdRow": function (row, data, index) {
+                    $(row).addClass('clickableRow');
+                }
+            });
+        });
+
+
+
+
+        $(document).ready(function () {
+            $("#btnCreate").click(function () {
+                var id = $(this).attr('id');
+                console.log(id);
+                $("#ModalCreate").modal('show');
+            });
+
+            $("#btnCreateClose").click(function () {
+                var id = $(this).attr('id');
+                $("#ModalCreate").modal('hide');
+            });
+        });
+
+
+        //Delete a selected item
+        $(document).ready(function () {
+            $('#btnDeleteRow').click(function () {
+                console.log('clicked');
+
+                //Get the item ID
+                var itemId = getRowItemId('#tbl_managelabourers');
+
+                if (itemId === -1) {
+                    alert('No row selected!');
+                    $("#ModalDelete").modal('hide');
+
+                    return;
+                }
+
+                var foundDependencies = checkForDependencies(itemId, 'tbl_labourerdata');
+
+                if (foundDependencies === 0) {
+                   var uselessVariable = deleteFromTable('#tbl_managelabourers')
+
+                   deleteFromDatabase(itemId, 'tbl_labourerdata');
+                   $("#ModalDelete").modal('hide');
+                   return;
+                }
+
+                else {
+                   alert('Can not delete the selected Labourer. They are currently involved in: ' + foundDependencies + ' offered services!');
+                   $("#ModalDelete").modal('hide');
+                   return;
+                }
+
+
+            })
+        });
+
+
+        $(document).ready(function () {
+            $('#btnCreateNew').click(function () {
+
+                //Serialize the Creation form to an array to put it in the viewable table
+                var dataArray = $("#newItemForm").serializeArray();
+                var dataObj = {};
+
+                $(dataArray).each(function (i, field) {
+                    dataObj[i + 1] = field.value;
+                });
+
+
+
+                //Index the array, like a Dictionary, so we can later use it in a .NET controller
+                var indexed_array = {};
+
+                $.map(dataArray, function (n, i) {
+                    indexed_array[n['name']] = n['value'];
+                });
+
+                //Hidden input is the object type we need to pass on
+
+                var objectType = $('#objectType').val();
+
+
+                //We need to send our indexed_array stringified
+                $.ajax({
+                    type: 'GET',
+                    data: { insertedDic: JSON.stringify(indexed_array), type: objectType },
+                    url: '/Admin/CreateItem',
+                    success: function (result) {
+                        dataObj[0] = result;
+                        $('#tbl_managelabourers').DataTable().row.add(dataObj);
+
+                    }
+                });
+
+                $('#tbl_managelabourers').DataTable().draw();
+
+                $("#ModalCreate").modal('hide');
+
+            });
+        });
+
+
+        //Update an item
+        $('#btnUpdateRow').click(function () {
+
+            InitializeUpdate('#tbl_managelabourers')
+
+
+
+            $("#ModalEdit").modal('hide');
+        });
+    </script>

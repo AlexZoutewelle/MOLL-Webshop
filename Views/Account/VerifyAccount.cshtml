@@ -1,0 +1,30 @@
+﻿@model TestWebApp.Models.tbl_userdata
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<head>
+    <title>MOLL | Login</title>
+</head>
+
+<body bgcolor="#f4f4f4">
+    <div id="menu_underheader">
+        <h1>@Html.DisplayFor(model => model.fld_username)   Verification page</h1>
+    </div>
+    <div id="section_form">
+        <img id="circlelogo" src="~/images/img_loginLogo.png" />
+        <div id="rectangle">
+            <div class="labourerdetails">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>@ViewData["message"]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

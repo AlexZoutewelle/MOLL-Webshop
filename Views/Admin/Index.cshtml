@@ -1,0 +1,98 @@
+﻿@using TestWebApp.Models;
+@model TestWebApp.Models.tbl_userdata
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<head>
+    <title>Admin Panel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<style>
+    #rectangle1 {
+        position: relative;
+        bottom: 40px;
+        width: 80vw;
+        height: auto;
+        background: white;
+        padding: 30px;
+        margin: auto;
+        border-radius: 30px;
+        z-index: 950;
+    }
+    #containertable {    
+        margin: auto;
+    }
+    #buttontable{
+        width: 10vw;
+    }
+    #buttontable button{
+        margin-bottom: 17px;
+        display: block;
+        align-content: center;
+    }
+</style>
+
+<body bgcolor="#f4f4f4">
+    <div id="rectangle1">
+        <table id="containertable">
+            <tbody>
+                <tr>
+                    <td>
+                        <table id="buttontable">
+                            <tbody>
+                                <tr>
+                                    <td><button onclick="location.href='@Url.Action("ManageUsers","Admin")'">Users</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button onclick="location.href='@Url.Action("ManageLabourers","Admin")'">Labourers</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button onclick="location.href='@Url.Action("ManageServices","Admin")'">Services</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button onclick="location.href='@Url.Action("ManageOLS","Admin")'">Offered services</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button>Favourite lists</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <canvas id="line-chart" width="800" height="450"></canvas>
+                        <script>
+                            new Chart(document.getElementById("line-chart"), {
+                                type: 'line',
+                                data: {
+                                    labels: ['September', 'October', 'November', 'December', 'January'],
+                                    datasets: [{
+                                        data: [86, 114, 106, 106, 107],
+                                        label: "User Registrations",
+                                        borderColor: "#3e95cd",
+                                        fill: false
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    title: {
+                                        display: true,
+                                        text: 'User registrations'
+                                    }
+                                }
+                            });
+                        </script>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <form action="action_page.php">
+        <div class="container2">
+        </div>
+    </form>
+</body>

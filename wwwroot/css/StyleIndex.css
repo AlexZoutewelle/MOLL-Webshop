@@ -1,0 +1,210 @@
+﻿.PageContainer {
+    position: fixed;
+    top: 216px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+    background: #f4f4f4;
+}
+
+body {
+    background: #f4f4f4;
+}
+/*--------------------Navigation--------------------*/
+.NavigationContainer {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    position: relative;
+    top: 500px;
+}
+
+.navbar-top {
+    overflow: hidden;
+    background-color: #333333;
+    width: 100%;
+    height: 55px;
+    padding: 0px 12vw 0px 12vw;
+}
+
+    .navbar-top a img {
+        width: 190px;
+        margin: 10px 0vw 0vw 0vw;
+    }
+
+    .navbar-top table {
+        display: inline-block;
+        width: auto;
+        float: right;
+        margin-right: -99px;
+        height: 500px;
+    }
+
+        .navbar-top table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    .navbar-top ul li {
+        list-style: none;
+        margin-left: -25px;
+        margin: 12px 0px 0px 0px;
+    }
+
+    .navbar-top a {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        position: relative;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+        .navbar-top a:hover {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+    .navbar-top td img {
+        display: inline-block;
+        width: 85px;
+        height: auto;
+        padding-bottom: 12px;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 10px 0px 0px 0px;
+        position: relative;
+        right: 93px;
+        z-index: 1;
+    }
+
+#navtd2 {
+    padding-right: 20px;
+}
+
+#navtd3 img:hover {
+    background-image: url('images/btn_SignUp-highlighted.png');
+}
+
+.form-inline {
+    float: right;
+    width: auto;
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#searchbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial, Helvetica, Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #searchbar input[type="text"]:focus {
+        width: 200px;
+        outline: none;
+    }
+
+.navbar li a {
+    font-family: 'Montserrat', sans-serif;
+    color: darkgray;
+    font-weight: 500;
+    margin-right: 0px;
+}
+
+.navbar-collapse {
+    margin: 0px 0px 0px -40px;
+    padding: 0px 11vw 0px 12vw;
+    height: 85px;
+}
+
+
+/*--------------------Under Header--------------------*/
+nav {
+    position: fixed;
+    top: 0px;
+}
+
+#menu_underheader {
+    height: 60px;
+    width: 100%;
+    background: #fafafa;
+    bottom: 60px;
+    position: relative;
+    z-index: 500;
+}
+
+    #menu_underheader h1 {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        margin: auto;
+        width: auto;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 20px;
+    }
+
+#filterbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px;
+    border: 1px solid;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #b9b9b9;
+    width: 14vw;
+    padding: 10px 15px 10px 15px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #filterbar input[type="text"]:focus {
+        width: 20vw;
+        outline: none;
+    }
+
+
+@media only screen and (max-width: 790px) {
+    #menu_underheader {
+        height: 60px;
+        width: 100%;
+        background: #fafafa;
+        top: 111px;
+        position: relative;
+        z-index: 500;
+    }
+}

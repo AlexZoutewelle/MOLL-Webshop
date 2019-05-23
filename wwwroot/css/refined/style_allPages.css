@@ -1,0 +1,773 @@
+﻿.PageContainer {
+    position: relative;
+    top: 55px;
+    width: 100%;
+    height: 1000px;
+    padding-bottom: 100px;
+    background: #f4f4f4;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background: #f4f4f4;
+}
+/*--------------------Navigation--------------------*/
+.NavigationContainer {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    position: relative;
+    top: 500px;
+}
+
+.navbar-top {
+    overflow: hidden;
+    background-color: #333333;
+    width: 100%;
+    height: 55px;
+    padding: 0px 12vw 0px 12vw;
+}
+
+    .navbar-top a img {
+        width: 190px;
+        margin: 10px 0vw 0vw 0vw;
+    }
+
+    .navbar-top table {
+        display: inline-block;
+        width: auto;
+        float: right;
+        margin-right: -99px;
+        height: 500px;
+    }
+
+        .navbar-top table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    .navbar-top ul li {
+        list-style: none;
+        margin-left: -25px;
+        margin: 12px 0px 0px 0px;
+    }
+
+    .navbar-top a {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        position: relative;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+        .navbar-top a:hover {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+    .navbar-top td img {
+        display: inline-block;
+        width: 85px;
+        height: auto;
+        padding-bottom: 12px;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 10px 0px 0px 0px;
+        position: relative;
+        right: 93px;
+        z-index: 1;
+    }
+
+#navtd2 {
+    padding-right: 20px;
+}
+
+#navtd3 img:hover {
+    background-image: url('images/btn_SignUp-highlighted.png');
+}
+
+.form-inline {
+    float: right;
+    width: auto;
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#searchbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial, Helvetica, Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #searchbar input[type="text"]:focus {
+        width: 200px;
+        outline: none;
+    }
+
+.navbar li a {
+    font-family: 'Montserrat', sans-serif;
+    color: darkgray;
+    font-weight: 500;
+    margin-right: 0px;
+}
+
+.navbar-collapse {
+    margin: 0px 0px 0px -40px;
+    padding: 30px 11vw 30px 12vw;
+}
+
+
+/*--------------------Under Header--------------------*/
+nav {
+    position: fixed;
+    top: 0px;
+}
+
+#menu_underheader {
+    height: 60px;
+    width: 100%;
+    background: #fafafa;
+    position: relative;
+    bottom: 125px;
+    z-index: 500;
+    margin-bottom: -100px;
+}
+
+    #menu_underheader h1 {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        margin: auto;
+        width: auto;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 20px;
+    }
+
+#filterbar input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px;
+    border: 1px solid;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #b9b9b9;
+    width: 14vw;
+    padding: 10px 15px 10px 15px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    outline: none;
+}
+
+    #filterbar input[type="text"]:focus {
+        width: 20vw;
+        outline: none;
+    }
+
+@media only screen and (max-width: 790px) {
+    #menu_underheader {
+        height: 76px;
+        width: 100%;
+        background: #fafafa;
+        position: relative;
+        bottom: 76px;
+        z-index: 500;
+        margin-bottom: -100px;
+    }
+
+    nav {
+        min-height: 85px;
+    }
+
+    #menu_underheader h1 {
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        margin: auto;
+        width: auto;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 26px;
+    }
+}
+
+/*Login Forms*/
+html,
+body {
+    padding-top: 5rem;
+    width: 100%;
+    height: 100%;
+}
+
+#section_form {
+    background: #f4f4f4;
+    padding-top: 1vw;
+    padding-bottom: 5vw;
+}
+
+.loginform th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #ffac35;
+    position: relative;
+    top: 0px;
+    left: -9px;
+}
+
+#circlelogo {
+    width: 8vw;
+    height: auto;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 20px;
+    z-index: 999;
+}
+
+#rectangle {
+    width: 55vw;
+    height: auto;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 950;
+}
+
+#forgotpass {
+    color: #ffac35;
+    font-style: italic;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    float: right;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    margin-top: -20px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    #forgotpass:hover {
+        color: #eda031;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+#tdforgotpass {
+    width: 25vw;
+    height: auto;
+}
+
+#tdnoaccount {
+    width: 25vw;
+    padding-top: 10px;
+}
+
+    #tdnoaccount a {
+        text-align: center;
+        color: #b9b9b9;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+        #tdnoaccount a:hover {
+            color: #9a9a9a;
+            font-weight: 600;
+            -moz-transition: all 0.2s ease 0s;
+            -o-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+        }
+
+.loginform button {
+    background-color: #ffac35;
+    color: grey;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 210px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    .loginform button:hover {
+        opacity: 0.75;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+.loginform table {
+    border: 0px solid #ffac35;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.loginform th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 45px;
+    font-size: 12px;
+    color: #ffac35;
+}
+
+.loginform input {
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+.loginform [type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+
+.loginform [type=password] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+}
+
+.loginform input[type=password]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+.loginform input[type=text]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+/* Labourer details */
+.labourerdetails table {
+    border: 0px solid #ffac35;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.labourerdetails th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 45px;
+    font-size: 12px;
+}
+
+.labourerdetails td {
+    color: #ffac35;
+}
+
+#post-avatar {
+    width: 12vw;
+    margin-left: 50px;
+}
+
+/*Register Page*/
+
+
+#section_form_reg {
+    background: #f4f4f4;
+    padding-top: 3vw;
+    padding-bottom: 5vw;
+}
+
+#rectangle_reg {
+    width: 70vw;
+    height: auto;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.registrationform table {
+    border: 0px solid #ffac35;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.registrationform input {
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+/* Full-width input fields */
+.registrationform [type=text], input[type=password], input[type=date], [type=email], [type=tel] {
+    padding: 15px;
+    margin: 5px 10px 15px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    position: relative;
+}
+
+select:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    border-color: #ffd59a;
+}
+
+select {
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    position: relative;
+    right: 7px;
+    top: 7px;
+    padding-top: 16px;
+    padding-bottom: 19px;
+    padding-left: 10px;
+    border: 2px solid #ffac35;
+    color: grey;
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.registrationform input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=email]:focus, input[type=tel]:focus {
+    background-color: none;
+    outline: none;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    border-color: #ffd59a;
+}
+
+/* Set a style for all buttons */
+.registrationform button {
+    background-color: #ffac35;
+    padding: 20px 20px;
+    border: none;
+    opacity: 0.9;
+    min-width: 210px;
+    max-width: 212px;
+    margin: auto;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    .registrationform button:hover {
+        opacity: 0.75;
+    }
+
+.registrationform th {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 6px;
+    position: relative;
+    top: 25px;
+    font-size: 12px;
+    color: #ffac35;
+}
+
+.registrationform input {
+    width: 22vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+/*Favourites List*/
+.shoppingcart table {
+    border: 0px solid black;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.shoppingcart button {
+    background-color: #ffac35;
+    color: grey;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 210px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+/*Shopping Cart*/
+
+.shoppingcart table {
+    border: 0px solid black;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.shoppingcart button {
+    background-color: #ffac35;
+    color: grey;
+    position: absolute;
+    bottom: 9vw;
+    right: 15vw;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 210px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+/*My Account*/
+#myaccounttd {
+    margin-top: 50px;
+}
+
+#userdata h1 {
+    position: relative;
+    bottom: 40px;
+}
+
+#section_form_acc {
+    background: #f4f4f4;
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+}
+
+#rectangle_acc {
+    text-align: center;
+    width: 65vw;
+    height: auto;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 950;
+}
+
+.titleText {
+    color: #444444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+}
+
+
+.titleTextData {
+    color: #b9b9b9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    top: 6px;
+    margin-left: 10px;
+}
+
+#selectgender {
+    position: relative;
+    bottom: 10px;
+}
+
+td button {
+    background-color: #ffac35;
+    color: grey;
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 140px;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    td button:hover {
+        opacity: .7;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+.labourerdetails td {
+    color: #ffac35;
+}
+
+#post-avatar2 {
+    width: 170px;
+    position: relative;
+    left: 30px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+}
+/*No Search Result*/
+#nosearchresult{
+    position:relative;
+    right: 150px;
+}
+
+
+/*Footer*/
+footer {
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #333333;
+    padding: 25px 5vw 1px 13vw;
+    color: white;
+}
+
+    footer img {
+        width: 190px;
+        margin: 5px 0vw 0vw 0vw;
+    }
+.footervinkImg{
+    width: 20px;
+    margin: 0px 0vw 0vw 4vw;
+}
+
+/*Payment Authentication page*/
+.paymentAuthentication [type=text], input[type=password], input[type=date], [type=email], [type=tel] {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px 10px 15px 0;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ffac35;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    position: relative;
+}
+
+.paymentAuthentication p, label, td{
+    color: #ffac35;
+}
+
+
+/*Admin Panel*/
+

@@ -1,0 +1,103 @@
+Procedure calls hebben altijd een return value
+hebben altijd parameters
+
+public int FindUserIdByEmail(string emailAddress){}
+
+public LoginModel UserLogin(LoginModel loginMdl){}
+
+public int CheckIfPasswordsMatch(LoginModel loginMdl)
+
+
+
+soms zijn de parameters primitives, soms complex
+
+public <R> callProcedure (Dictionary<string, Object> dic, string resultType)
+{
+	string[] inputkeys = dic.Keys.Where(k => k.StartsWith("in")).ToArray();
+        string[] outputKeys = dic.Keys.Where(k => k.StartsWith("out")).ToArray();
+	try
+	{
+		using(MySqlConnection conn = GetConnection())
+		{
+			MySqlParameter[] params = new MySqlParameter[parameters.Count];
+
+			//set input variables  0 tot inputKeys.Length - 1 in params[]
+			for(int i = 0; i < inputKeys.Length; i++)
+			{
+				string currentKey = dic[inputKeys[i]];
+				params[i] = new MySqlParameter(inputKeys[i], retreiveDbValue(dic[inputKeys]));
+				params[i].Direction = ParameterDirection.Output;
+				params[i].Value = dic[currentKey];
+			
+				//moeten aangepast worden (begin met "in" of "out")
+			}
+			//set output variables inputKeys.Length tot params.Length -1 in params[]
+			for(int i =  inputkeys.Length - 1; i < params.Length; i++)
+			{
+				string currentKey = outputKeys[i-inputKeys.Length];
+				params[i] = new MySqlParameter(currentKey, retreiveDbValue(dic[currentKey]));
+				params[i].Direction = Direction.Output;
+				params[i].Value = dic[outputKeys[i - inputKeys.length]];
+			}
+						
+			MySqlCommand cmd = new MySqlCommand(name, conn)
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddRange(params);
+
+			conn.Open();
+
+			switch(resultType){
+
+				case: "reader":
+					MySqlDataReader queryResult = cmd.ExecuteReader();
+					R objectDatWeWillen = FilldObject();
+					return objectDatWeWillen;
+					
+				break;
+				
+				case: "nonQuery":
+					R queryResult = cmd.ExecuteNonQuery();	
+					//return de outputvariable;				
+				break;
+
+				default:
+					???;
+				break; 
+			}
+		}
+	}
+}
+
+public <R> FillObject(Object object)
+{
+	
+	PropertyInfo[] properties = typeof(
+}
+
+public <R> RetreiveDbType(Object value)
+
+switch(typeof(value))
+	{
+		case System.Int32:
+			return MySqlDbType.Int32;
+		case System.string:
+			return MySqlDbType.VarChar;
+		default:
+			return 
+			
+	}
+}
+
+
+Parameters kunnen gestopt worden in een dictionary.
+
+We kunnen dan een class T returnen, die wordt gevuld met de FillObject method
+
+commandType: singleValue of resultSet
+als singleValue, dan wordt gewoon de output waarde van de procedure gepakt
+als resultSet, dan wordt de FillObject gecalled om de class T te vullen
+
+
+
+Data visualisatie vanuit een business perspectief
+Niet van debug perspectief
